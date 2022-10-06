@@ -25,4 +25,7 @@ import com.example.forage.data.ForageDatabase
 class BaseApplication : Application() {
 
     // TODO: provide a ForageDatabase value by lazy here
+    // Using by lazy so the database is only created when needed
+    // rather than when the application starts
+    val database: ForageDatabase by lazy { ForageDatabase.getDatabase(this) }
 }
